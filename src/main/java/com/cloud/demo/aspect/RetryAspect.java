@@ -37,6 +37,7 @@ public class RetryAspect {
                     TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
                     return AccountService.Result.FAILED;
                 }
+                throw e;
             }
         } while (true);
     }
